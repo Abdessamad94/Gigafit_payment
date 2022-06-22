@@ -32,7 +32,7 @@ function Form() {
     <div className="form">
       <div className="progressbar">
         <div
-          style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
+          style={{ width: page === 0 ? "0%" : page == 1 ? "50%" : "100%" }}
         ></div>
         <div className="stepnum">
           <span>1</span>

@@ -1,10 +1,16 @@
 import "./App.css";
 import Form from "./components/Form";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/sidebar";
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Navbar />
+      <div className="continer">
+        <Form />
+        <Sidebar />
+      </div>
     </div>
   );
 }
