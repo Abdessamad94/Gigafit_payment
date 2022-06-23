@@ -8,7 +8,10 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="continer">
-        <Form />
+        <div className="payment">
+          <div className="title">Lorem Ipsum</div>
+          <Form />
+        </div>
         <Sidebar />
       </div>
     </div>

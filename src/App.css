@@ -1,37 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-.App {
-  /* background: rgb(119, 217, 69); */
-  background-image: url("https://gigafit.fr/wp-content/uploads/2022/04/squash-04.jpg");
-  /* background: radial-gradient(
-    circle,
-    rgb(67, 129, 20) 0%,
-    rgb(16, 212, 88) 84%,
-    rgb(55, 238, 42) 100%
-  ); */
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+:root {
+  --padding: 1% 8%;
+  --main-color: #7ca868;
+  --color-white: #ffffff;
 }
 
 body {
+  background-image: url("https://gigafit.fr/wp-content/uploads/2022/04/squash-04.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* width: 100%; */
   margin: 0%;
   padding: 0%;
   font-family: montserrat, arial, verdana;
 }
 
 .form {
+  padding-top: 20px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .form-container {
-  width: 400px;
-  height: 400px;
+  width: 100%;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -59,7 +55,7 @@ body {
   border-radius: 7px;
   width: 100px;
   height: 40px;
-  background-color: rgb(0, 255, 102);
+  background-color: var(--main-color);
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -107,7 +103,7 @@ body {
 
 /* PROGRESS BAR */
 .progressbar {
-  width: 400px;
+  width: 100%;
   height: 6px;
   border-radius: 50px;
   background-color: white;
@@ -117,7 +113,7 @@ body {
 .progressbar div {
   height: 100%;
   border-radius: 50px;
-  background-color: rgb(92, 255, 130);
+  background-color: var(--main-color);
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -139,28 +135,27 @@ body {
 }
 
 input {
-  border: 2px solid rgb(68, 255, 0);
+  border: 2px solid var(--main-color);
   border-radius: 5px;
 }
 
 input:focus {
-  border: 3px solid rgb(85, 255, 0);
+  border: 3px solid var(--main-color);
 }
 
-.stepnum
-{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: unset !important;
+.stepnum {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: unset !important;
 }
 
 .stepnum span {
-  color: WHITE;
+  color: var(--color-white);
   /* padding: 10px; */
   height: 40px;
   width: 40px;
-  background: red;
+  background: var(--main-color);
   display: flex;
   border-radius: 50%;
   align-items: center;
@@ -169,32 +164,74 @@ input:focus {
 
 /* NavBar */
 
-.navbar{
-  height: 80px;
+.navbar {
+  height: 60px;
   background-color: rgb(13, 13, 13);
   display: flex;
   justify-content: space-between;
-  padding: 10px 50px;
+  padding: var(--padding);
+  position: sticky;
+  top: 0;
 }
 
-.plus
-{
+.plus {
   color: white;
   display: flex;
   align-items: center;
 }
 
-
 /*  sidebar    */
-.sidebar{
+.sidebar {
   background-color: black;
   width: 30vw;
-  height: calc(100vw - 50px);
+  height: 400px;
+  position: sticky;
+  top: calc(60px + 1% + 1%);
 }
 
-
-
-.continer{
+.continer {
   display: flex;
+  padding: var(--padding);
+}
 
+.payment {
+  width: 100%;
+  /* padding-right: 10px; */
+  margin-right: 10px;
+  background-color: black;
+}
+
+.title {
+  color: white;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+/* style the club page and club cart */
+
+.clubslist {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.club-cart {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clubimg {
+  width: 200px;
+  height: 200px;
+}
+
+.club-cart .body span {
+  display: block;
+  text-align: center;
 }
