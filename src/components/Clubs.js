@@ -1,7 +1,7 @@
 import React from "react";
 import ClubCart from "./sub_component/ClubCart";
 
-function Clubs({ id, setIdclub }) {
+function Clubs({ id, setIdclub,setPage,page }) {
   const clubs = [
     {
       id: "123",
@@ -45,6 +45,8 @@ function Clubs({ id, setIdclub }) {
           addres={e.adress}
           idclub={id}
           setIdclub={setIdclub}
+          setPage={setPage}
+          page={page}
         />
       ))}
     </div>

@@ -15,7 +15,7 @@ function Form() {
   const [idclub, setIdclub] = useState(false);
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    idcart: "",
+    idclub: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -31,7 +31,7 @@ function Form() {
   const PageDisplay = () => {
     if (page === 0) {
       if (!landingpage) {
-        return <Clubs id={idclub} setIdclub={setIdclub} />;
+        return <Clubs id={idclub} setIdclub={setIdclub} setPage = {setPage} page={page}/>;
       } else {
         setPage((page) => page + 1);
         console.log("this is " + page)
@@ -63,7 +63,7 @@ function Form() {
       <div className="progressbar">
         {console.log(landingpage)}
         {console.log(idclub)}
-        <div style={{ width: progress() }}></div>
+        <div className="progress" style={{ width: progress() }}></div>
         <div className="stepnum" disabled={page == 0}>
           <span>1</span>
           <span>2</span>
@@ -76,7 +76,8 @@ function Form() {
           <h1>{FormTitles[page]}</h1>
         </div>
         <div className="body">{PageDisplay()}</div>
-        <div className="footer">
+        {
+          page ? (<div className="footer">
           <button
             disabled={page == 0}
             onClick={() => {
@@ -92,7 +93,8 @@ function Form() {
           >
             {page === FormTitles.length - 1 ? "Submit" : "Next"}
           </button>
-        </div>
+        </div>) : "" 
+        }
       </div>
     </div>
   );
