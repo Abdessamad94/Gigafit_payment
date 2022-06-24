@@ -15,6 +15,7 @@ body {
   margin: 0%;
   padding: 0%;
   font-family: montserrat, arial, verdana;
+  box-sizing: inherit;
 }
 
 .form {
@@ -153,8 +154,8 @@ input:focus {
 .stepnum span {
   color: var(--color-white);
   /* padding: 10px; */
-  height: 40px;
-  width: 40px;
+  width: 30px;
+  height: 30px;
   background: var(--main-color);
   display: flex;
   border-radius: 50%;

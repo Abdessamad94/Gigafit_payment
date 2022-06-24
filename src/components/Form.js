@@ -26,11 +26,16 @@ function Form() {
     other: "",
   });
 
-  const FormTitles = ["1", "2", "3", "4"];
+  const FormTitles = ["Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées"];
 
   const PageDisplay = () => {
     if (page === 0) {
-      return <Clubs id={idclub} setIdclub={setIdclub} />;
+      if (!landingpage) {
+        return <Clubs id={idclub} setIdclub={setIdclub} />;
+      } else {
+        setPage((page) => page + 1);
+        console.log("this is " + page)
+      }
     } else if (page === 1) {
       return <SignUpInfo formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
