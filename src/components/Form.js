@@ -26,7 +26,7 @@ function Form() {
     other: "",
   });
 
-  const FormTitles = ["Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées"];
+  const FormTitles = ["Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées" , "Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées"];
 
   const PageDisplay = () => {
     if (page === 0) {
@@ -69,6 +69,9 @@ function Form() {
           <span>2</span>
           <span>3</span>
           <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
         </div>
       </div>
       <div className="form-container">
