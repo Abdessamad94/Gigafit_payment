@@ -11,7 +11,7 @@ function ClubCart({ id, name, addres, idclub, setIdclub, setPage, page }) {
         />
       </div>
       <div className="set">
-        <div className="body">
+        <div className="cart-body">
           <span>{id}</span>
           <span>{name}</span>
           <span>{addres}</span>

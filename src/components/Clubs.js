@@ -25,6 +25,16 @@ function Clubs({ id, setIdclub,setPage,page }) {
     },
     {
       id: "123",
+      name: "test2",
+      adress: "hfhfhf 21 jhfjkdhfjkdfj",
+    },
+    {
+      id: "123",
+      name: "test",
+      adress: "hfhfhf 21 jhfjkdhfjkdfj",
+    },
+    {
+      id: "123",
       name: "test",
       adress: "hfhfhf 21 jhfjkdhfjkdfj",
     },
@@ -38,7 +48,7 @@ function Clubs({ id, setIdclub,setPage,page }) {
 
   return (
     <div className="clubslist">
-      {clubs.map((e) => (
+      {clubs.filter((c) => (c.name.toLowerCase().includes(""))).map((e) => (
         <ClubCart
           key={e.id}
           name={e.name}
