@@ -267,16 +267,3 @@ input:focus {
   text-align: center;
   
 }
-
-
-/*    popup    */
-
-
-.popup-bg
-{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-
-}
