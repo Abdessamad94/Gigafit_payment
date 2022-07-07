@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 :root {
+  --black-color: #000000;
   --padding: 1% 8%;
   --main-color: #7ca868;
   --color-white: #ffffff;
@@ -33,7 +34,7 @@ body {
 
 .form-container {
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--black-color);
   border-radius: 8px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
@@ -165,7 +166,7 @@ input:focus {
 
 .navbar {
   height: 60px;
-  background-color: rgb(13, 13, 13);
+  background-color: var(--black-color);
   display: flex;
   justify-content: space-between;
   padding: var(--padding);
