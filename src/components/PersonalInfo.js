@@ -4,7 +4,8 @@ function PersonalInfo({ formData, setFormData }) {
   return (
     <div className="personal-info-container">
       
-      <input
+      
+      {/* <input
         type="text"
         placeholder="First Name..."
         value={formData.firstName}
@@ -27,7 +28,7 @@ function PersonalInfo({ formData, setFormData }) {
         onChange={(e) => {
           setFormData({ ...formData, username: e.target.value });
         }}
-      />
+      /> */}
     </div>
   );
 }

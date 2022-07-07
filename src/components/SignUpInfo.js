@@ -3,7 +3,7 @@ import React from "react";
 function SignUpInfo({ formData, setFormData }) {
   return (
     <div className="sign-up-container">
-      <input
+      {/* <input
         type="text"
         placeholder="Email..."
         value={formData.email}
@@ -26,7 +26,7 @@ function SignUpInfo({ formData, setFormData }) {
         onChange={(event) =>
           setFormData({ ...formData, confirmPassword: event.target.value })
         }
-      />
+      /> */}
     </div>
   );
 }
