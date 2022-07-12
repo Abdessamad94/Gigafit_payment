@@ -1,5 +1,5 @@
 import React from "react";
-import ClubCart from "./sub_component/ClubCart";
+import ClubCart from "../components/sub_component/ClubCart";
 
 function Clubs({ id, setIdclub,setPage,page }) {
   const clubs = [

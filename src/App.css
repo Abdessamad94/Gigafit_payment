@@ -304,3 +304,31 @@ input:focus {
 .club-info .mail:hover {
   color: #ea4335;
 }
+
+/*    Abonnement and abonnement cart style    */
+
+.abnlist
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.abn-cart
+{
+  width: 50%;
+  color: white;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  margin: 0px 8px;
+  box-shadow: var(--secend-level-box-shadow);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  padding: 50px 0px;
+}
+
+.abn-cart .ftr
+{
+  width: 100%;
+  text-align: center;
+}

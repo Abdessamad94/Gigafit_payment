@@ -3,7 +3,7 @@ import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
 import OtherInfo from "./OtherInfo";
 import Subscription from "./Subscription";
-import Clubs from "../components/Clubs";
+import Clubs from "./Clubs";
 
 function Form() {
   /*check if user come from landing page or from Gigafit.fr*/

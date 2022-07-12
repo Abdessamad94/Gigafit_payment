@@ -1,9 +1,12 @@
 import React from "react";
+import AbnCart from "../components/sub_component/AbnCart";
 
 function Subscription() {
   return (
-    <div style={{backgroundColor : "red"}}>
-      hdhfhfhfhfhf
+    <div className="abnlist">
+      <AbnCart />
+      <AbnCart />
+      <AbnCart />
     </div>
   )
 }
