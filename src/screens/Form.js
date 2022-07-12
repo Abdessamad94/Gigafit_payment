@@ -3,7 +3,7 @@ import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
 import OtherInfo from "./OtherInfo";
 import Subscription from "./Subscription";
-import Clubs from "./Clubs";
+import Clubs from "../components/Clubs";
 
 function Form() {
   /*check if user come from landing page or from Gigafit.fr*/
@@ -26,7 +26,7 @@ function Form() {
     other: "",
   });
 
-  const FormTitles = ["Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées" , "Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées"];
+  const FormTitles = ["Votre club", "Abonnement", "Vos accessoires", "Coordonnées" , "Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées"];
 
   const PageDisplay = () => {
     if (page === 0) {
@@ -37,7 +37,7 @@ function Form() {
         console.log("this is " + page)
       }
     } else if (page === 1) {
-      return <SignUpInfo formData={formData} setFormData={setFormData} />;
+      return <Subscription formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
       return <PersonalInfo formData={formData} setFormData={setFormData} />;
     } else {
