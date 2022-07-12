@@ -247,13 +247,14 @@ input:focus {
   border-radius: 10px;
   height: 60%;
   transition: var(--animation-style);
-  font-size: .8rem;
+  font-size: 0.8rem;
   /* border: 1px solid whitesmoke; */
 }
 .club-cart:hover .set {
   bottom: 0px;
   box-shadow: 0px 0px 5px 0px white;
 }
+
 
 .clubimg {
   width: 100%;
@@ -265,7 +266,37 @@ input:focus {
   transition: var(--animation-style);
 }
 
+.club-cart .cart-body {
+  display: block;
+  text-align: center;
+  margin-top:10px;
+}
+
 .club-cart .cart-body span {
   display: block;
   text-align: center;
+}
+
+.club-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-info a {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 15px;
+  color: rgb(103, 103, 103);
+}
+
+.club-info .fb:hover {
+  color: #4867aa;
+}
+.club-info .inst:hover {
+  color: #d23e87;
+}
+.club-info .mail:hover {
+  color: #ea4335;
 }
