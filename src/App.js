@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <div className="continer">
         <div className="payment">
-          <div className="title">Lorem Ipsum</div>
+          <div className="title">Payment</div>
           <Form />
         </div>
         <Sidebar />

@@ -26,7 +26,7 @@ function Form() {
     other: "",
   });
 
-  const FormTitles = ["Votre club", "Abonnement", "Vos accessoires", "Coordonnées" , "Votre club", "Votre formule & options", "Vos accessoires", "Coordonnées"];
+  const FormTitles = ["Votre club", "Abonnement", "Vos accessoires", "Coordonnées" , "Votre club", "Votre formule & options", "Vos accessoires"];
 
   const PageDisplay = () => {
     if (page === 0) {
@@ -46,11 +46,36 @@ function Form() {
   };
 
   const progress = () => {
-    return page === 0 ? "0%" : page == 1 ? "25%" : page === 2 ? "50%" : "100%";
+    switch (page) {
+      case 0:
+        return "0%"
+        break;
+      case 1:
+        return (100/FormTitles.length) + "%"
+        break;
+      case 2:
+        return ((100/FormTitles.length) * 2) + "%"
+        break;
+      case 3:
+        return ((100/FormTitles.length) * 3) + "%"
+        break;
+      case 4:
+        return ((100/FormTitles.length) * 4) + "%"
+        break;
+      case 5:
+        return ((100/FormTitles.length) * 5) + "%"
+        break;
+      case 6:
+        return ((100/FormTitles.length) * 6) + "%"
+        break;
+      case 7:
+        return ((100/FormTitles.length) * 7) + "%"
+        break;
+    }
   };
 
   const nav = () => {
-    if (page === FormTitles.length - 1) {
+    if (page === FormTitles.length) {
       console.log(formData);
     } else {
       setPage((currPage) => currPage + 1);
@@ -60,6 +85,7 @@ function Form() {
 
   return (
     <div className="form">
+      {console.log("page" + page)}
       <div className="progressbar">
         {console.log(landingpage)}
         {console.log(idclub)}
@@ -94,7 +120,7 @@ function Form() {
               nav();
             }}
           >
-            {page === FormTitles.length - 1 ? "Submit" : "Next"}
+            {page === FormTitles.length ? "Submit" : "Next"}
           </button>
         </div>) : "" 
         }
