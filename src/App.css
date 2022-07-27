@@ -332,3 +332,18 @@ input:focus {
   width: 100%;
   text-align: center;
 }
+
+/*  search input in clubs   */
+
+.search-continer
+{
+  width: 100%;
+  height: 50px;
+}
+
+.search
+{
+  width: 40%;
+  margin: 0 auto;
+}
+

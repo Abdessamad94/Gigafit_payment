@@ -26,15 +26,30 @@ function Form() {
     other: "",
   });
 
-  const FormTitles = ["Votre club", "Abonnement", "Vos accessoires", "Coordonnées" , "Votre club", "Votre formule & options", "Vos accessoires"];
+  const FormTitles = [
+    "Votre club",
+    "Abonnement",
+    "Vos accessoires",
+    "Coordonnées",
+    "Votre club",
+    "Votre formule & options",
+    "Vos accessoires",
+  ];
 
   const PageDisplay = () => {
     if (page === 0) {
       if (!landingpage) {
-        return <Clubs id={idclub} setIdclub={setIdclub} setPage = {setPage} page={page}/>;
+        return (
+          <Clubs
+            id={idclub}
+            setIdclub={setIdclub}
+            setPage={setPage}
+            page={page}
+          />
+        );
       } else {
         setPage((page) => page + 1);
-        console.log("this is " + page)
+        console.log("this is " + page);
       }
     } else if (page === 1) {
       return <Subscription formData={formData} setFormData={setFormData} />;
@@ -46,30 +61,31 @@ function Form() {
   };
 
   const progress = () => {
+    let fraction = 100 / 6;
     switch (page) {
       case 0:
-        return "0%"
+        return "0%";
         break;
       case 1:
-        return (100/FormTitles.length) + "%"
+        return fraction + "%";
         break;
       case 2:
-        return ((100/FormTitles.length) * 2) + "%"
+        return fraction * 2 + "%";
         break;
       case 3:
-        return ((100/FormTitles.length) * 3) + "%"
+        return fraction * 3 + "%";
         break;
       case 4:
-        return ((100/FormTitles.length) * 4) + "%"
+        return fraction * 4 + "%";
         break;
       case 5:
-        return ((100/FormTitles.length) * 5) + "%"
+        return fraction * 5 + "%";
         break;
       case 6:
-        return ((100/FormTitles.length) * 6) + "%"
+        return fraction * 6 + "%";
         break;
       case 7:
-        return ((100/FormTitles.length) * 7) + "%"
+        return fraction * 7 + "%";
         break;
     }
   };
@@ -80,6 +96,7 @@ function Form() {
     } else {
       setPage((currPage) => currPage + 1);
       console.log(page);
+      console.log("id club : " + idclub);
     }
   };
 
@@ -105,25 +122,27 @@ function Form() {
           <h1>{FormTitles[page]}</h1>
         </div>
         <div className="body">{PageDisplay()}</div>
-        {
-          page ? (<div className="footer">
-          <button
-            disabled={page == 0}
-            onClick={() => {
-              setPage((currPage) => currPage - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-            onClick={() => {
-              nav();
-            }}
-          >
-            {page === FormTitles.length ? "Submit" : "Next"}
-          </button>
-        </div>) : "" 
-        }
+        {page ? (
+          <div className="footer">
+            <button
+              disabled={page == 0}
+              onClick={() => {
+                setPage((currPage) => currPage - 1);
+              }}
+            >
+              Prev
+            </button>
+            <button
+              onClick={() => {
+                nav();
+              }}
+            >
+              {page === FormTitles.length ? "Submit" : "Next"}
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

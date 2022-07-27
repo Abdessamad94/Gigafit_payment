@@ -1,24 +1,24 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faFacebook , faInstagram} from '@fortawesome/free-brands-svg-icons'
-function ClubCart({ id, name, addres, idclub, setIdclub, setPage, page }) {
+import { faFacebook , faInstagram } from '@fortawesome/free-brands-svg-icons'
+function ClubCart({ id, name, addres, idclub, setIdclub, picture , setPage, page }) {
   return (
     <div className="club-cart">
       <div className="head">
         <img
           className="clubimg"
-          src="https://gigafit.fr/wp-content/uploads/2022/04/saint-orens-1.jpg"
+          src= {`${process.env.React_APP_IMG_API}/images/clubs/${picture}`}
           alt="test"
         />
       </div>
       <div className="set">
         <div className="cart-body">
-          <span className="club-id">{id}</span>
-          <span className="club-addres">{addres}</span>
+          <span className="club-id">{idclub}</span>
           <span className="club-name">{name}</span>
+          <span className="club-addres">{addres}</span>
           <div className="club-info">
-            <a className="fb" href="#"><span><FontAwesomeIcon icon={faFacebook} /></span></a>
+            <a className="fb" href="#"><span><FontAwesomeIcon icon={faFacebook}/></span></a>
             <a className="inst" href="#"><span><FontAwesomeIcon icon={faInstagram} /></span></a>
             <a className="mail" href="#"><span><FontAwesomeIcon icon={faEnvelope} /></span></a>
           </div>
