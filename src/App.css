@@ -38,6 +38,7 @@ body {
   background-color: var(--black-color);
   border-radius: 8px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  min-width: 100%;
 }
 
 .form-container .header {
@@ -341,9 +342,35 @@ input:focus {
   height: 50px;
 }
 
-.search
-{
-  width: 40%;
+.search {
+  width: 30%;
+  height: 30px;
   margin: 0 auto;
+  border: 1px solid #7ca868;
+  border-radius: 50px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 0px 10px;
+  color: var(--main-color);
+
 }
+
+.search input {
+  background-color: transparent;
+  border: none;
+  border-radius: 50px;
+  color: white;
+}
+
+.search input:focus-visible {
+  border: none ;
+  outline: none;
+}
+
+.search input:focus .search {
+  box-shadow: var(--secend-level-box-shadow);
+  background-color: #7ca868;
+}
+
 

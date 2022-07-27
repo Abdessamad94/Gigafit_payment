@@ -1,10 +1,12 @@
 import { React, useEffect, useState } from "react";
 import ClubCart from "../components/sub_component/ClubCart";
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 function Clubs({ id, setIdclub, setPage, page }) {
   const [clubs, setClubs] = useState([]);
+  const [search, setSearch] = useState("");
 
   /*  just dummy data   */
 
@@ -64,19 +66,24 @@ function Clubs({ id, setIdclub, setPage, page }) {
       setClubs(res.data);
     };
     getclubs();
-  });
+  }, []);
 
   return (
     <>
       <div className="search-continer">
         <div className="search">
-        <input type="text" />
-        <i className="search-icon"><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></i>
+          <input
+            type="text"
+            placeholder="Chercher..."
+            onChange={(e) => setSearch(e.target.value.toLowerCase())}
+          />
+
+          <i className="search-icon"><FontAwesomeIcon icon={faEnvelope}/></i>
         </div>
       </div>
       <div className="clubslist">
         {clubs
-          .filter((c) => c.name.toLowerCase().includes(""))
+          .filter((c) => c.name.toLowerCase().includes(search))
           .map((e) => (
             <ClubCart
               key={e.resId}
