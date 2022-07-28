@@ -294,6 +294,12 @@ input:focus {
   margin-left: 5px;
   font-size: 15px;
   color: rgb(103, 103, 103);
+  text-decoration: none !important;
+}
+
+.club-info .tel
+{
+  text-decoration: none !important;
 }
 
 .club-info .fb:hover {
@@ -304,6 +310,16 @@ input:focus {
 }
 .club-info .mail:hover {
   color: #ea4335;
+}
+
+.club-name
+{
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.club-addres {
+  padding: 3px 10px;
 }
 
 /*    Abonnement and abonnement cart style    */
@@ -357,6 +373,7 @@ input:focus {
 }
 
 .search input {
+  width: 100%;
   background-color: transparent;
   border: none;
   border-radius: 50px;
@@ -374,3 +391,19 @@ input:focus {
 }
 
 
+
+/* Mobile css  */
+
+@media only screen and (max-width: 600px) {
+  .sidebar
+  {
+    display: none !important;
+  }
+
+  .clubslist {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
