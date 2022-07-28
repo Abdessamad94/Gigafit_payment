@@ -2,14 +2,15 @@ import { React, useEffect, useState } from "react";
 import ClubCart from "../components/sub_component/ClubCart";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faEnvelope, faVcard } from "@fortawesome/free-regular-svg-icons";
+import { SpinnerCircular } from "spinners-react";
 
 function Clubs({ id, setIdclub, setPage, page }) {
   const [clubs, setClubs] = useState([]);
   const [search, setSearch] = useState("");
+  const [isloaded, setIsloaded] = useState(false);
 
   /*  just dummy data   */
-
   // const clubs = [
   //   {
   //     id: "123",
@@ -64,10 +65,12 @@ function Clubs({ id, setIdclub, setPage, page }) {
         },
       });
       setClubs(res.data);
+      setIsloaded(true);
     };
+    if (isloaded) return;
+
     getclubs();
   }, []);
-
   return (
     <>
       <div className="search-continer">
@@ -77,25 +80,38 @@ function Clubs({ id, setIdclub, setPage, page }) {
             placeholder="Chercher..."
             onChange={(e) => setSearch(e.target.value.toLowerCase())}
           />
-
-          <i className="search-icon"><FontAwesomeIcon icon={faEnvelope}/></i>
+          <i className="search-icon">
+            <FontAwesomeIcon icon={faVcard} />
+          </i>
         </div>
       </div>
       <div className="clubslist">
-        {clubs
-          .filter((c) => c.name.toLowerCase().includes(search))
-          .map((e) => (
-            <ClubCart
-              key={e.resId}
-              name={e.name}
-              picture={e.picture}
-              addres={e.adresse}
-              idclub={e.resId}
-              setIdclub={setIdclub}
-              setPage={setPage}
-              page={page}
-            />
-          ))}
+        {clubs.length === 0 ? (
+          <div
+            style={{
+              width: "100%",
+              height: "40vh",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <SpinnerCircular />
+          </div>
+        ) : (
+          clubs
+            .filter((c) => c.name.toLowerCase().includes(search))
+            .map((e) => (
+              <ClubCart
+                key={e.id}
+                info={e}
+                idclub={e.resId}
+                setIdclub={setIdclub}
+                setPage={setPage}
+                page={page}
+              />
+            ))
+        )}
       </div>
     </>
   );
