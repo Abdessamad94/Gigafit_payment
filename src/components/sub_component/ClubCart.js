@@ -15,7 +15,7 @@ function ClubCart({ id, idclub, info , setIdclub , setPage, page }) {
       <div className="set">
         <div className="cart-body">
           <span className="club-id">{idclub}</span>
-          <span className="club-name">{info.name}</span>
+          <span className="club-name">{info.name.replace('Gigafit ', '')}</span>
           <span className="club-addres">{info.adresse}</span>
           <div className="club-info">
             <a className="fb" href={info.facebook} target="_blanck"><span><FontAwesomeIcon icon={faFacebook}/></span></a>

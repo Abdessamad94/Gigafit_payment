@@ -85,20 +85,22 @@ function Clubs({ id, setIdclub, setPage, page }) {
           </i>
         </div>
       </div>
+      {/* when the clubs are loading */}
+      {
+        clubs.length === 0 && <div
+        style={{
+          width: "100%",
+          height: "40vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <SpinnerCircular />
+      </div>
+      }
       <div className="clubslist">
-        {clubs.length === 0 ? (
-          <div
-            style={{
-              width: "100%",
-              height: "40vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <SpinnerCircular />
-          </div>
-        ) : (
+        {
           clubs
             .filter((c) => c.name.toLowerCase().includes(search))
             .map((e) => (
@@ -111,7 +113,7 @@ function Clubs({ id, setIdclub, setPage, page }) {
                 page={page}
               />
             ))
-        )}
+        }
       </div>
     </>
   );
