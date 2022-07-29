@@ -1,10 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 :root {
-  --black-color: #000000;
+  --background-color: #000000;
   --padding: 1% 8%;
   --main-color: #7ca868;
-  --color-white: #ffffff;
+  --text-color: #ffffff;
   --animation-style: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
   --first-level-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05),
     0 1px 5px 0 rgba(0, 0, 0, 0.05);
@@ -43,7 +43,7 @@ body {
 
 .form-container {
   width: 100%;
-  background-color: var(--black-color);
+  background-color: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
   min-width: 100%;
@@ -53,7 +53,7 @@ body {
   flex: 20%;
   display: grid;
   place-items: center;
-  color: var(--color-white);
+  color: var(--text-color);
 }
 
 .form-container .footer {
@@ -67,7 +67,7 @@ body {
   width: 100%;
   height: 40px;
   background-color: var(--main-color);
-  color: white;
+  color: var(--text-color);
   border: 0 none;
   cursor: pointer;
   padding: 8px 20px;
@@ -114,7 +114,7 @@ body {
   width: 100%;
   height: 6px;
   border-radius: 50px;
-  background-color: white;
+  background-color: var(--text-color);
   margin-bottom: 50px;
 }
 
@@ -159,7 +159,7 @@ input:focus {
 }
 
 .stepnum span {
-  color: var(--color-white);
+  color: var(--text-color);
   /* padding: 10px; */
   width: 30px;
   height: 30px;
@@ -174,7 +174,7 @@ input:focus {
 
 .navbar {
   height: 60px;
-  background-color: var(--black-color);
+  background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
   padding: var(--padding);
@@ -184,7 +184,7 @@ input:focus {
 }
 
 .plus {
-  color: white;
+  color: var(--text-color);
   display: flex;
   align-items: center;
 }
@@ -194,7 +194,7 @@ input:focus {
 }
 /*  sidebar    */
 .sidebar {
-  background-color: var(--black-color);
+  background-color: var(--background-color);
   width: 30vw;
   height: 400px;
   position: sticky;
@@ -214,7 +214,7 @@ input:focus {
 }
 
 .title {
-  color: white;
+  color: var(--text-color);
   font-size: 30px;
   padding-bottom: 10px;
 }
@@ -267,13 +267,13 @@ input:focus {
   padding: var(--padding);
   border: none;
   border-radius: 50px;
-  color: white;
+  color: var(--text-color);
   height: 60%;
 }
 
 .club-cart:hover .set {
   bottom: 0px;
-  box-shadow: 0px 0px 5px 0px white;
+  box-shadow: 0px 0px 5px 0px var(--text-color);
 }
 
 .clubimg {
@@ -358,7 +358,7 @@ span.club-tel:hover {
 
 .abn-cart {
   width: 50%;
-  color: white;
+  color: var(--text-color);
   border: 1px solid var(--main-color);
   border-radius: 10px;
   margin: 0px 8px;
@@ -399,7 +399,7 @@ span.club-tel:hover {
   background-color: transparent;
   border: none;
   border-radius: 50px;
-  color: white;
+  color: var(--text-color);
 }
 
 .search input:focus-visible {
