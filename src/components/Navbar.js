@@ -1,4 +1,5 @@
 import React from "react";
+import { FaUserAlt } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -7,7 +8,7 @@ function Navbar() {
         className="logo"
         src="https://gigafit.fr/wp-content/uploads/2021/03/Logo-Gigafit-V4-blanc-et-vert-.png"
       />
-      <div className="plus">lorem ipsome</div>
+      <div className="plus"><span>Vous avez un compte ?</span></div>
     </div>
   );
 }

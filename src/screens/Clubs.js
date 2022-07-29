@@ -1,9 +1,8 @@
 import { React, useEffect, useState } from "react";
 import ClubCart from "../components/sub_component/ClubCart";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faVcard } from "@fortawesome/free-regular-svg-icons";
 import { SpinnerCircular } from "spinners-react";
+import { FaSearch } from "react-icons/fa";
 
 function Clubs({ id, setIdclub, setPage, page }) {
   const [clubs, setClubs] = useState([]);
@@ -80,40 +79,38 @@ function Clubs({ id, setIdclub, setPage, page }) {
             placeholder="Chercher..."
             onChange={(e) => setSearch(e.target.value.toLowerCase())}
           />
-          <i className="search-icon">
-            <FontAwesomeIcon icon={faVcard} />
+           <i className="search-icon">
+            <FaSearch />
           </i>
         </div>
       </div>
       {/* when the clubs are loading */}
-      {
-        clubs.length === 0 && <div
-        style={{
-          width: "100%",
-          height: "40vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <SpinnerCircular />
-      </div>
-      }
+      {clubs.length === 0 && (
+        <div
+          style={{
+            width: "100%",
+            height: "40vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <SpinnerCircular />
+        </div>
+      )}
       <div className="clubslist">
-        {
-          clubs
-            .filter((c) => c.name.toLowerCase().includes(search))
-            .map((e) => (
-              <ClubCart
-                key={e.id}
-                info={e}
-                idclub={e.resId}
-                setIdclub={setIdclub}
-                setPage={setPage}
-                page={page}
-              />
-            ))
-        }
+        {clubs
+          .filter((c) => c.name.toLowerCase().includes(search))
+          .map((e) => (
+            <ClubCart
+              key={e.id}
+              info={e}
+              idclub={e.resId}
+              setIdclub={setIdclub}
+              setPage={setPage}
+              page={page}
+            />
+          ))}
       </div>
     </>
   );
